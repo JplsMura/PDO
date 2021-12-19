@@ -15,13 +15,17 @@ try {
     // Gera erros caso aconteça algum, o erro é atribuido a variavel que está instânciando a class PDO
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $name = 'Teste2';
-    $description = 'Teste2';
+    $name = 'Teste';
+    $description = 'Teste';
 
-    $sql = "INSERT INTO products (name, description) VALUES ('{$name}', '{$description}')";
-    
-    $insert = $pdo->exec($sql);
-    var_dump($insert);
+    // INSERT de Registo
+    // $sql = "INSERT INTO products (name, description) VALUES ('{$name}', '{$description}')";
+    // $insert = $pdo->exec($sql);
+    // var_dump($insert);
+
+    // UPDATE de registro
+    // $update = $pdo->exec("UPDATE products SET name='{$name}', description='{$description}' WHERE id=1");
+    // var_dump($update);
 
 } catch (Throwable | PDOException $e) {
     echo $e->getCode().'<br>'; // Pega o código da execeção
